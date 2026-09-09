@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f8fa">
+  <meta name="description" content="أدِر مجموعاتك، الحضور، الدفعات، والاختبارات في تطبيق واحد يعمل بدون إنترنت">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ClassTrack — كل ما يحتاجه المدرّس لإدارة حصصه">
+  <meta property="og:description" content="إدارة الحصص، الحضور، الدفعات، والاختبارات — بدون إنترنت.">
+  <meta property="og:image" content="assets/icon.png">
+  <title>ClassTrack — كل ما يحتاجه المدرّس لإدارة حصصه</title>
+  <link rel="icon" type="image/png" href="assets/icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top">
+        <img class="brand-logo" src="assets/icon.png" alt="ClassTrack">
+        <span>ClassTrack</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#features" data-i18n="nav.features"></a>
+        <a href="#how" data-i18n="nav.how"></a>
+        <a href="#screens" data-i18n="nav.screens"></a>
+        <a href="#download" data-i18n="nav.download"></a>
+      </nav>
+      <div class="header-actions">
+        <button id="langToggle" class="icon-btn" aria-label="Language">EN</button>
+        <button id="themeToggle" class="icon-btn" aria-label="Theme"></button>
+        <a class="btn btn-primary header-cta" href="#download" data-i18n="nav.cta"></a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="hero-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h16"/><rect x="7" y="4" width="10" height="16" rx="2.5"/><path d="M12 17h.01"/></svg>
+            <span data-i18n="hero.badge"></span>
+          </span>
+          <h1 data-i18n="hero.title"></h1>
+          <p class="lead" data-i18n="hero.lead"></p>
+          <div class="hero-ctas">
+            <a id="downloadBtn" class="btn btn-accent btn-lg" data-apk-link href="https://github.com/alhosainy/ClassTrack/releases/latest">
+              <span class="btn-icon" id="downloadBtnIcon"></span>
+              <span id="downloadBtnText" data-i18n="hero.download"></span>
+            </a>
+            <a class="btn btn-ghost btn-lg" href="https://github.com/alhosainy/classtrack-site">
+              <span class="btn-icon" id="githubBtnIcon"></span>
+              <span data-i18n="hero.github"></span>
+            </a>
+          </div>
+          <ul id="heroPoints" class="hero-points"></ul>
+        </div>
+
+        <div class="phone-wrap">
+          <div class="phone">
+            <div class="phone-screen" id="phoneScreen"></div>
+            <div class="phone-notch"></div>
+          </div>
+          <div class="carousel-dots" id="carouselDots"></div>
+          <p class="carousel-caption" id="carouselCaption"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats strip -->
+    <section class="stats-strip">
+      <div class="container">
+        <div class="stats-grid" id="statsGrid"></div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="overline" data-i18n="features.overline"></span>
+          <h2 data-i18n="features.title"></h2>
+          <p data-i18n="features.subtitle"></p>
+        </div>
+        <div class="features-grid" id="featuresGrid"></div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section id="how" class="section" style="background: var(--surface-raised); border-block: 1px solid var(--divider);">
+      <div class="container">
+        <div class="section-head">
+          <span class="overline" data-i18n="how.overline"></span>
+          <h2 data-i18n="how.title"></h2>
+        </div>
+        <div class="how-grid" id="howGrid"></div>
+      </div>
+    </section>
+
+    <!-- Screenshots -->
+    <section id="screens" class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="overline" data-i18n="screens.overline"></span>
+          <h2 data-i18n="screens.title"></h2>
+          <p data-i18n="screens.subtitle"></p>
+        </div>
+        <div class="gallery-grid" id="galleryGrid"></div>
+      </div>
+    </section>
+
+    <!-- Download -->
+    <section id="download" class="download">
+      <div class="container download-inner">
+        <h2 id="downloadTitle"></h2>
+        <p id="downloadDesc"></p>
+        <div class="hero-ctas" style="justify-content:center;">
+          <a id="apkBtn" class="btn btn-accent btn-lg" data-apk-link href="https://github.com/alhosainy/ClassTrack/releases/latest">
+            <span class="btn-icon" id="apkBtnIcon"></span>
+            <span id="apkBtnText"></span>
+          </a>
+        </div>
+        <div class="platforms">
+          <span class="platform-card" id="playStoreCard"></span>
+          <span class="platform-card" id="iosCard"></span>
+        </div>
+        <p class="download-note" id="downloadNote"></p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="brand">
+        <img class="brand-logo" src="assets/icon.png" alt="ClassTrack">
+        <span>ClassTrack</span>
+      </div>
+      <span id="footerTagline"></span>
+      <span id="footerRights"></span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
