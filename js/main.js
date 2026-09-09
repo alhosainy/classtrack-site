@@ -129,6 +129,7 @@ const I18N = {
       apkNote: 'أحدث إصدار مباشرة من GitHub Releases',
       play: 'قريبًا على Google Play',
       ios: 'iOS قريبًا',
+      count: 'تحميل',
     },
 
     footer: {
@@ -223,6 +224,7 @@ const I18N = {
       apkNote: 'Latest version straight from GitHub Releases',
       play: 'Coming soon on Google Play',
       ios: 'iOS coming soon',
+      count: 'downloads',
     },
 
     footer: {
@@ -273,6 +275,7 @@ function applyLanguage() {
   renderCarousel();
   renderDownload();
   renderFooter();
+  updateDownloadBadge();
 }
 
 function renderHeroPoints() {
@@ -401,12 +404,45 @@ async function setApkLinks() {
   }
 }
 
+/* ---------------- Download count badge ---------------- */
+
+let dlTotal = 0;
+
+function updateDownloadBadge() {
+  const el = document.getElementById('dlCount');
+  if (!dlTotal) {
+    el.hidden = true;
+    return;
+  }
+  const formatted = dlTotal.toLocaleString(lang === 'ar' ? 'ar-EG' : 'en-US');
+  el.textContent = `${formatted} ${t('download.count')}`;
+  el.hidden = false;
+}
+
+async function fetchDownloadCount() {
+  try {
+    const res = await fetch('https://api.github.com/repos/alhosainy/classtrack-site/releases?per_page=100');
+    if (!res.ok) throw new Error(String(res.status));
+    const releases = await res.json();
+    dlTotal = (releases || []).reduce(
+      (sum, r) => sum + (r.assets || []).reduce(
+        (s, a) => s + (/^classtrack-.*\.apk$/.test(a.name) ? a.download_count : 0), 0
+      ),
+      0
+    );
+    updateDownloadBadge();
+  } catch {
+    document.getElementById('dlCount').hidden = true;
+  }
+}
+
 /* ---------------- Wire up ---------------- */
 
 document.addEventListener('DOMContentLoaded', () => {
   applyTheme();
   applyLanguage();
   setApkLinks();
+  fetchDownloadCount();
 
   document.getElementById('langToggle').addEventListener('click', () => {
     lang = lang === 'ar' ? 'en' : 'ar';
