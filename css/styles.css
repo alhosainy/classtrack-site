@@ -703,6 +703,66 @@ img {
   display: none;
 }
 
+.safety-note {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  text-align: left;
+  margin: 26px auto 0;
+  padding: 20px 22px;
+  max-width: 560px;
+  border: 1px solid var(--divider);
+  border-radius: var(--radius-medium);
+  background: var(--surface-raised);
+}
+
+html[lang="ar"] .safety-note {
+  text-align: right;
+}
+
+.safety-icon {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: var(--radius-small);
+  background: var(--primary-container);
+  color: var(--on-primary-container);
+}
+
+.safety-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.safety-text {
+  text-align: left;
+}
+
+.safety-text h3 {
+  margin: 0 0 6px;
+  font-size: 16px;
+  font-weight: 800;
+  text-align: left;
+}
+
+.safety-text p {
+  margin: 0 0 8px;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.safety-text p:last-child {
+  margin-bottom: 0;
+}
+
+.safety-steps {
+  font-weight: 700;
+  color: var(--text-primary) !important;
+}
+
 /* ---------- Footer ---------- */
 
 .site-footer {

@@ -169,6 +169,10 @@ const I18N = {
       play: "قريبًا على Google Play",
       ios: "iOS قريبًا",
       count: "تحميل",
+      safetyTitle: "تحذير Google Play Protect طبيعي",
+      safetyBody:
+        "ClassTrack يُحمَّل مباشرة من GitHub وليس من متجر Google Play، لذلك قد يظهر تحذير «لم يتم فحص هذا التطبيق» أو «التطبيق غير آمن» أثناء التحميل. هذا طبيعي لأي تطبيق خارج المتجر ولا يعني أن ClassTrack خطير. بعد اكتمال التثبيت، يفحص Play Protect التطبيق ويعرض في النهاية «لا توجد مشاكل».",
+      safetySteps: "إذا ظهرت الرسالة: اضغط «تفاصيل أكثر» ثم «التثبيت على أي حال».",
     },
 
     footer: {
@@ -308,6 +312,10 @@ const I18N = {
       play: "Coming soon on Google Play",
       ios: "iOS coming soon",
       count: "downloads",
+      safetyTitle: "The Google Play Protect warning is normal",
+      safetyBody:
+        "ClassTrack is downloaded directly from GitHub, not the Google Play Store. That's why Play Protect may warn “This app isn't scanned by Play Protect” or “This app isn't safe” while it downloads. This is normal for any app installed outside the Play Store — it does not mean ClassTrack is dangerous. Once installed, Play Protect actually scans the app and reports no issues.",
+      safetySteps: "If the warning appears: tap “More details”, then “Install anyway”.",
     },
 
     footer: {
@@ -470,6 +478,12 @@ function renderDownload() {
     `${svg(ICONS.playStore)} <span>${t("download.play")}</span>`;
   document.getElementById("iosCard").innerHTML =
     `${svg(ICONS.apple)} <span>${t("download.ios")}</span>`;
+  document.getElementById("safetyIcon").innerHTML = svg(ICONS.shield);
+  document.getElementById("safetyTitle").textContent =
+    t("download.safetyTitle");
+  document.getElementById("safetyBody").textContent = t("download.safetyBody");
+  document.getElementById("safetySteps").textContent =
+    t("download.safetySteps");
 }
 
 function renderFooter() {
