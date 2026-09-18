@@ -11,7 +11,7 @@ The ClassTrack *application source code* lives in a private repository and is no
 - Bilingual **Arabic-first / English** with a language toggle (RTL/LTR aware)
 - **Light/dark** theme toggle
 - Hero with a live screenshot carousel + a section explaining the app's headline features
-- Feature grid, "how it works" steps, and a screenshot gallery (all screenshots are real captures from the app)
+- Feature grid, "how it works" steps, and a screenshot gallery (all screenshots are real captures from the app, running against an example dataset)
 - **Download section** with the latest APK link and coming-soon Google Play / iOS placeholders
 
 ## Download link
